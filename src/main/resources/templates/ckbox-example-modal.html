@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<body>
+	<section layout:fragment="content">
+		<input type="text" id="file-url"></input><button id="choose">Choose file</button>
+		<div id="ckbox"></div>
+		<script>
+			document.getElementById('choose').addEventListener('click', function () {
+				CKBox.mount(document.querySelector('#ckbox'), {
+					tokenUrl: `${ location.origin }/ckbox/auth`,
+					dialog: true,
+					assets: {
+						// Callback executed after choosing assets
+						onChoose: (assets) => {
+							document.getElementById('file-url').value = assets[0].data.url;
+
+							assets.forEach((asset) => {
+								console.log(asset.data.url);
+							})
+						}
+					}
+				});
+			});
+		</script>
+	</section>
+</body>
+</html>

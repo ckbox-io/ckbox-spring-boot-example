@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+	<script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+</head>
+<body>
+	<section layout:fragment="content">
+		<textarea id="editor"><h1>Example</h1><p>Hello world</p></textarea>
+
+		<script>
+			ClassicEditor
+				.create( document.querySelector( '#editor' ), {
+					ckbox: {
+						tokenUrl: `${ location.origin }/ckbox/auth`,
+						theme: 'lark'
+					},
+					toolbar: [
+						'ckbox', 'imageUpload', '|', 'heading', '|', 'undo', 'redo', '|', 'bold', 'italic', '|',
+						'blockQuote', 'indent', 'link', '|', 'bulletedList', 'numberedList'
+					],
+				} )
+				.catch( error => {
+					console.error( error );
+				} );
+		</script>
+	</section>
+</body>
+</html>
