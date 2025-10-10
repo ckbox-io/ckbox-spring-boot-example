@@ -16,6 +16,7 @@ To run this example you will need access credentials required to connect to the 
    ```bash
    environment_id=REPLACE-WITH-ENVIRONMENT-ID \
    access_key=REPLACE-WITH-ACCESS-KEY \
+   ckeditor_license_key=REPLACE-WITH-CKEDITOR5-LICENSE-KEY \
    ./mvnw spring-boot:run
    ```
 
