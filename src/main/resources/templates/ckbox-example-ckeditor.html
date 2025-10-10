@@ -16,7 +16,8 @@
 		<textarea id="editor"><h1>Example</h1><p>Hello world</p></textarea>
 		<script src="https://cdn.ckeditor.com/ckeditor5/47.0.0/ckeditor5.umd.js" crossorigin></script>
 		<script>
-            window.CKEDITOR.ClassicEditor.create(document.querySelector('#editor'), {
+            const { ClassicEditor, Autoformat, AutoImage, Autosave, BlockQuote, Bold, CKBox, CKBoxImageEdit, CloudServices, Heading, ImageBlock, ImageCaption, ImageInline, ImageInsert, ImageInsertViaUrl, ImageStyle, ImageTextAlternative, ImageUpload, Italic, Link, LinkImage, List, PictureEditing, TextTransformation, Underline } = CKEDITOR;
+            ClassicEditor.create(document.querySelector('#editor'), {
                 ckbox: {
                     tokenUrl: `${ location.origin }/ckbox/auth`,
             		theme: 'lark'
@@ -43,30 +44,30 @@
                     'numberedList'
                 ],
                 plugins: [
-                    window.CKEDITOR.Autoformat,
-                    window.CKEDITOR.AutoImage,
-                    window.CKEDITOR.Autosave,
-                    window.CKEDITOR.BlockQuote,
-                    window.CKEDITOR.Bold,
-                    window.CKEDITOR.CKBox,
-                    window.CKEDITOR.CKBoxImageEdit,
-                    window.CKEDITOR.CloudServices,
-                    window.CKEDITOR.Heading,
-                    window.CKEDITOR.ImageBlock,
-                    window.CKEDITOR.ImageCaption,
-                    window.CKEDITOR.ImageInline,
-                    window.CKEDITOR.ImageInsert,
-                    window.CKEDITOR.ImageInsertViaUrl,
-                    window.CKEDITOR.ImageStyle,
-                    window.CKEDITOR.ImageTextAlternative,
-                    window.CKEDITOR.ImageUpload,
-                    window.CKEDITOR.Italic,
-                    window.CKEDITOR.Link,
-                    window.CKEDITOR.LinkImage,
-                    window.CKEDITOR.List,
-                    window.CKEDITOR.PictureEditing,
-                    window.CKEDITOR.TextTransformation,
-                    window.CKEDITOR.Underline
+                    Autoformat,
+                    AutoImage,
+                    Autosave,
+                    BlockQuote,
+                    Bold,
+                    CKBox,
+                    CKBoxImageEdit,
+                    CloudServices,
+                    Heading,
+                    ImageBlock,
+                    ImageCaption,
+                    ImageInline,
+                    ImageInsert,
+                    ImageInsertViaUrl,
+                    ImageStyle,
+                    ImageTextAlternative,
+                    ImageUpload,
+                    Italic,
+                    Link,
+                    LinkImage,
+                    List,
+                    PictureEditing,
+                    TextTransformation,
+                    Underline
                 ],
             }).catch((error) => {
                 console.error(error);
