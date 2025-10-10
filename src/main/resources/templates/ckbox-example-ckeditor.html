@@ -3,25 +3,80 @@
 	layout:decorate="~{layout}">
 <head>
 	<link rel="stylesheet" href="https://cdn.ckbox.io/ckbox/2.9.0/styles/themes/lark.css">
+	<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/47.0.0/ckeditor5.css" crossorigin>
 	<link rel="stylesheet" href="./ckeditor5/ckeditor5.css" crossorigin>
 	<style>
 		.ck-editor__editable_inline {
 			min-height: calc(100vh - 100px);
 		}
-	</style>
+		</style>
 </head>
 <body>
 	<section layout:fragment="content">
 		<textarea id="editor"><h1>Example</h1><p>Hello world</p></textarea>
-		<script type="importmap">
-			{
-				"imports": {
-					"ckeditor5": "./ckeditor5/ckeditor5.js",
-					"ckeditor5/": "./ckeditor5/"
-				}
-			}
-		</script>
-		<script type="module" src="./ckeditor5/main.js"></script>
+		<script src="https://cdn.ckeditor.com/ckeditor5/47.0.0/ckeditor5.umd.js" crossorigin></script>
+		<script>
+            window.CKEDITOR.ClassicEditor.create(document.querySelector('#editor'), {
+                ckbox: {
+                    tokenUrl: `${ location.origin }/ckbox/auth`,
+            		theme: 'lark'
+                },
+                licenseKey: '[[${licenseKey}]]',
+                toolbar: [
+                    'ckbox',
+                    'imageUpload',
+                    '|',
+                    'heading',
+                    '|',
+                    'undo',
+                    'redo',
+                    '|',
+                    'heading',
+                    '|',
+                    'bold',
+                    'italic',
+                    'underline',
+                    '|',
+                    'blockQuote',
+                    'indent',
+                    'link',
+                    'insertImage',
+                    'ckbox',
+                    'blockQuote',
+                    '|',
+                    'bulletedList',
+                    'numberedList'
+                ],
+                plugins: [
+                    window.CKEDITOR.Autoformat,
+                    window.CKEDITOR.AutoImage,
+                    window.CKEDITOR.Autosave,
+                    window.CKEDITOR.BlockQuote,
+                    window.CKEDITOR.Bold,
+                    window.CKEDITOR.CKBox,
+                    window.CKEDITOR.CKBoxImageEdit,
+                    window.CKEDITOR.CloudServices,
+                    window.CKEDITOR.Heading,
+                    window.CKEDITOR.ImageBlock,
+                    window.CKEDITOR.ImageCaption,
+                    window.CKEDITOR.ImageInline,
+                    window.CKEDITOR.ImageInsert,
+                    window.CKEDITOR.ImageInsertViaUrl,
+                    window.CKEDITOR.ImageStyle,
+                    window.CKEDITOR.ImageTextAlternative,
+                    window.CKEDITOR.ImageUpload,
+                    window.CKEDITOR.Italic,
+                    window.CKEDITOR.Link,
+                    window.CKEDITOR.LinkImage,
+                    window.CKEDITOR.List,
+                    window.CKEDITOR.PictureEditing,
+                    window.CKEDITOR.TextTransformation,
+                    window.CKEDITOR.Underline
+                ],
+            }).catch((error) => {
+                console.error(error);
+            })
+        </script>
 	</section>
 </body>
 </html>
