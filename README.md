@@ -2,10 +2,10 @@
 
 This repository contains an example of a Spring Boot application that integrates CKBox and covers the popular usage scenarios.
 
-The full guide describing the code of this example can be found [in the CKBox Documentation](https://ckeditor.com/docs/ckbox/latest/guides/integrations/springboot.html).
+The full guide describing the code of this example can be found [in the CKBox Documentation](https://ckeditor.com/docs/ckbox/latest/guides/integrations/frameworks/spring-boot.html).
 
 ## Prerequisites
-To run this example you will need access credentials required to connect to the CKBox service that you can obtain in the [CKEditor Ecosystem dashboard](https://dashboard.ckeditor.com/login).
+To run this example you will need access credentials required to connect to the CKBox service that you can obtain in the [Customer Portal](https://portal.ckeditor.com).
 
 ## Running the application
 
