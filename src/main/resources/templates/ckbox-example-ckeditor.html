@@ -2,8 +2,8 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout}">
 <head>
-	<link rel="stylesheet" href="https://cdn.ckbox.io/ckbox/2.11.0/styles/themes/lark.css">
-	<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/47.6.1/ckeditor5.css" crossorigin>
+	<link rel="stylesheet" href="https://cdn.ckbox.io/ckbox/2.12.0/styles/themes/lark.css">
+	<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/48.1.0/ckeditor5.css" crossorigin>
 	<link rel="stylesheet" href="./ckeditor5/ckeditor5.css" crossorigin>
 	<style>
 		.ck-editor__editable_inline {
@@ -14,7 +14,7 @@
 <body>
 	<section layout:fragment="content">
 		<textarea id="editor"><h1>Example</h1><p>Hello world</p></textarea>
-		<script src="https://cdn.ckeditor.com/ckeditor5/47.6.1/ckeditor5.umd.js" crossorigin></script>
+		<script src="https://cdn.ckeditor.com/ckeditor5/48.1.0/ckeditor5.umd.js" crossorigin></script>
 		<script>
             const { ClassicEditor, Autoformat, AutoImage, Autosave, BlockQuote, Bold, CKBox, CKBoxImageEdit, CloudServices, Heading, ImageBlock, ImageCaption, ImageInline, ImageInsert, ImageInsertViaUrl, ImageStyle, ImageTextAlternative, ImageUpload, Italic, Link, LinkImage, List, PictureEditing, TextTransformation, Underline } = CKEDITOR;
             ClassicEditor.create(document.querySelector('#editor'), {
